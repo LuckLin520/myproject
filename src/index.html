@@ -4,24 +4,83 @@
 	<meta charset="UTF-8">
 	<title>首页</title>
 	<script src="lib/requirejs/require.js" data-main="js/index"></script>
-	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/headerfooter.css">
+	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 	<header></header>
-	<div class="main">
-		<h1>商品列表信息</h1>
-		<div class="list"></div>
-		<script type="text/html" id="list_template">
-			{{each list as prod}}
-				<div class="prod">
-					<div class="id">{{prod.id}}</div>
-					<div class="title">{{prod.title}}</div>
-					<div class="price">{{prod.price}}</div>
-					<div class="img">{{prod.img}}</div>
-				</div>
-			{{/each}}
-		</script>
-	</div>
-	<footer>尾部资源</footer>
+	<main>
+		<div class="banner"></div>
+		<div class="recharge"><img src="/images/adBar/recharge.jpg"></div>
+		<!-- 秒杀 -->
+		<div class="miaosha">
+			<div class="top"><p><em></em><em></em><em></em></p></div>
+			<ul class="pro_miaosha">
+				
+			</ul>
+			<script type="text/html" id="miaosha">
+				{{each data as v i}}
+					<li><a href="#">
+						<img src="/images/adBar/{{v.img}}">
+						<p class="title">{{v.title}}</p>
+						<del>￥<span>{{v.old}}</span></del>
+						<p class="price">￥<span>{{v.now}}</span></p>
+						<div class="position">充值后<span>{{v.future}}</span>元</div></a>
+					</li>
+				{{/each}}
+			</script>
+		</div>
+		<!-- T恤上新 -->
+		<div class="newTshirt public">
+			<div class="top"><img src="/images/adBar/newTshirt.jpg"></div>
+			<ul class="pro_tshirt">
+				<li><a href="#"><img src="/images/adBar/2001.jpg" alt=""></a></li>
+				<li><a href="#"><img src="/images/adBar/2002.jpg" alt=""></a></li>
+				<li><a href="#"><img src="/images/adBar/2003.jpg" alt=""></a></li>
+				<li><a href="#"><img src="/images/adBar/2004.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<!-- 外套上新 -->
+		<div class="newWrap public">
+			<div class="top"><img src="/images/adBar/newWrap.jpg"></div>
+			<ul class="pro_tshirt">
+				<li><a href="#"><img src="/images/adBar/3001.jpg" alt=""></a></li>
+				<li><a href="#"><img src="/images/adBar/3002.jpg" alt=""></a></li>
+				<li><a href="#"><img src="/images/adBar/3003.jpg" alt=""></a></li>
+				<li><a href="#"><img src="/images/adBar/3004.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<!-- 女神三免一 -->
+		<div class="sanmianyi public">
+			<div class="top"><img src="/images/adBar/nvshengjie.jpg"></div>
+			<ul class="pro_tshirt">
+				<li><a href="#"><img src="/images/adBar/4001.jpg" alt=""></a></li>
+				<li><a href="#"><img src="/images/adBar/4002.jpg" alt=""></a></li>
+				<li><a href="#"><img src="/images/adBar/4003.jpg" alt=""></a></li>
+				<li><a href="#"><img src="/images/adBar/4004.jpg" alt=""></a></li>
+			</ul>
+			<ul class="widthImg">
+				<li><a href="#"><img src="/images/adBar/5001.jpg"></a></li>
+				<li><a href="#"><img src="/images/adBar/5002.jpg"></a></li>
+				<li><a href="#"><img src="/images/adBar/5003.jpg"></a></li>
+				<li><a href="#"><img src="/images/adBar/5004.jpg"></a></li>
+				<li><a href="#"><img src="/images/adBar/5005.jpg"></a></li>
+				<li><a href="#"><img src="/images/adBar/5006.jpg"></a></li>
+			</ul>
+		</div>
+		<!-- 一行四列 -->
+		<div class="moreLike">
+			<ul class="temBox">
+
+			</ul>
+			<script type="text/html" id="more">
+				{{each data as v i}}
+					<li><a href="#"><img src="/images/flex/{{v.img}}"></a></li>
+				{{/each}}
+			</script>
+		</div>
+	</main>
+	<footer></footer>
 </body>
 </html>

@@ -1,7 +1,116 @@
-.container {
-	width: 1280px;
-}
+a:hover{text-decoration: none; color: inherit;}
+$red_color : #b81b22;
 
-.nav {
-	color: red;
+main{
+	font-family: "Microsoft YaHei",Arial;
+	width: 1200px;
+	margin: 28px auto;
+	/*border: 1px solid red;*/
+	div.recharge{
+		margin: 20px 0;
+	}
+	div.miaosha{
+		width: 1200px;
+		height: 415px;
+		.top{
+			height: 64px;
+			background: url(/images/adBar/miaosha.jpg);
+			position: relative;
+			p{
+				position: absolute;
+				right: 9px;
+				top: 20px;
+				font-size: 18px;
+				color: $red_color;
+				em{
+					margin: 0 21px;
+				}
+			}
+		}
+		ul.pro_miaosha{
+			width: 1200px;
+			margin-top: 11px;
+			li{
+				width: 232px;
+				height: 327px;
+				margin-right: 10px;
+				float: left;
+				position: relative;
+				a{
+					position: absolute;
+
+				}
+				.title{
+					font-size: 16px;
+					margin: 10px 0 21px;
+				}
+				del{
+					font-size: 14px;
+					color: #d3d3d3;
+				}
+				.price{
+					font-size: 16px;
+					color: $red_color;
+				}
+				.position{
+					position: absolute;
+					right: 0;
+					bottom: -2px;
+					font-size: 16px;
+					span{
+						font-size: 24px;
+						color: $red_color;
+						font-weight: bold;
+					}
+				}
+			}
+			:last-child{
+				margin: 0;
+			}
+		}
+	}
+	div.public{
+		width: 1200px;
+		ul.pro_tshirt{
+			width: 1155px;
+			height: 425px;
+			margin: 0 auto;
+			li{
+				float: left;
+				margin-right: 28px;
+			}
+			:last-child{
+				margin: 0;
+			}
+		}
+	}
+	div.sanmianyi{
+		div.top{
+			margin-top: 25px;
+		}
+		ul.pro_tshirt{
+			width: 1200px;
+			height: 495px;
+			li{
+				margin: 0;
+			}
+		}
+		ul.widthImg{
+			width: 1200px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+	div.moreLike{
+		ul.temBox{
+			display: flex;
+			width: 1200px;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			li{
+				margin: 10px 0;
+			}
+		}
+	}
 }

@@ -1,0 +1,13 @@
+{
+	"res_code":0,
+	"res_error":"",
+	"res_body":{
+		"data":[
+			{"id":1, "title":"童装卫衣 圆领 熊本熊 S6 浅花灰", "old": 598, "now": 338, "future": 169, "img":"1001.jpg"},
+			{"id":2, "title":"牛津纺 夹克修身 C9 男款 绿色", "old": 398, "now": 178, "future": 89, "img":"1002.jpg"},
+			{"id":3, "title":"牛津纺 拼接 男款 黑色", "old": 298, "now": 138, "future": 69, "img":"1003.jpg"},
+			{"id":4, "title":"童装卫衣 圆领 熊本熊 S9 黑色", "old": 258, "now": 138, "future": 69, "img":"1004.jpg"},
+			{"id":5, "title":"凡客牛仔裤 基础直筒 轻弹水洗 男款 原靛蓝", "old": 258, "now": 138, "future": 69, "img":"1004.jpg"}
+		]
+	}
+}

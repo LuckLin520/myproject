@@ -4,6 +4,7 @@ var gulp = require("gulp"),
 	connect = require("gulp-connect"),
 	htmlmin = require("gulp-htmlmin"),
 	babel = require("gulp-babel"),
+	plumber = require("gulp-plumber"),
 	_root = "dist";
 
 // 启动服务器
@@ -17,6 +18,7 @@ gulp.task("server", function(){
 // 压缩JS
 gulp.task("js", function(){
 	gulp.src("src/js/**/*.js")
+		.pipe(plumber())
 		.pipe(babel({
             presets: ['env']
         }))
@@ -36,6 +38,7 @@ gulp.task("html", function(){
 // 定义任务，编译 sass
 gulp.task("sass", function(){
 	gulp.src("src/sass/**/*.scss")
+		.pipe(plumber())
 		.pipe(sass({outputStyle:"compressed"}))
 		.pipe(gulp.dest(_root + "/css"))
 		.pipe(connect.reload());
@@ -54,7 +57,7 @@ gulp.task("mock", function(){
 	gulp.src("src/mock/**/*.*")
 		.pipe(gulp.dest("dist/mock"));
 });
-gulp.task("copyfile", ["images", "lib", "mock"]);
+gulp.task("copyfile", ["images", "mock"]);
 
 gulp.task("watch", function(){
 	gulp.watch("src/sass/**/*.scss", ["sass"]);

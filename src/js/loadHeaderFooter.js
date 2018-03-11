@@ -1,27 +1,26 @@
 define(["jquery", "cookie"], function() {
-	$("header").load("/html/include/header.html", function(){
-		/* 绑定搜索键盘事件 */
-		$(".search .word").on("keyup", function(){
-			// jsonp 接口
-		let val = $(this).val(),
-			url = `https://suggest.taobao.com/sug?code=utf-8&q=${val}&callback=?`;
-			$.ajax({
-				type : "get",
-				url : url,
-				dataType : "jsonp",
-				success : function(data){
-					let html = "";
-					data.result.forEach(function(curr){
-						html += `<div>${curr[0]}</div>`;
-					});
-					$(".suggest").html(html);
-				}
-			});
-		});
-
-		/* 查询是否有登录用户 */
-		let user = $.cookie("loginUser");
-		if (user)
-			$(".login_reg").html(`<a href="${user}"></a>`);
+	$("header").load("/html/include/idxHeader.html", function(){
+		$.get("/mock/nav.json", function(data){
+			$(".hdbox ul.daohang li").on("mouseenter", function(){
+				$(this).find(".spacer").css({display: "block"});
+				for(let attr in data.res_body){
+					if($(this).text() === attr){
+						let html = "", arr = data.res_body[attr];
+						arr.forEach(function(v){
+							html += `<div><a href="#">${v}</a></div>`;
+						})
+						$(this).find(".sub").html(html);
+					}
+				};
+				$(this).find(".sub").finish().slideDown();
+			})
+			$(".hdbox ul.daohang li").on("mouseleave", function(){
+				$(this).find(".sub").finish().slideUp(function(){
+					$(this).siblings(".spacer").css({display: "none"});
+				});
+			})
+		}, "json")
 	});
+
+	$("footer").load("/html/include/idxFooter.html");
 });
