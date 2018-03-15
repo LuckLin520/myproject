@@ -1,0 +1,13 @@
+{
+	"res_code":0,
+	"res_error":"",
+	"res_body":{
+		"data":[
+			{"id":87, "title":"凡客卫衣 中空棉拉链开衫 男款 蓝花灰", "old": 798, "now": 438, "future": 219, "img": "1001a.jpg", "color": "蓝花灰"},
+			{"id":88, "title":"MA1飞行夹克 双面穿 薄棉 C9 军绿色", "old": 498, "now": 218, "future": 109, "img": "1002a.jpg", "color": "军绿色"},
+			{"id":89, "title":"牛津纺 迷彩拼接 男款 蓝色", "old": 298, "now": 116, "future": 58, "img": "1003a.jpg", "color": "蓝色"},
+			{"id":90, "title":"凡客卫衣 基础连帽 浅花灰", "old": 298, "now": 156, "future": 78, "img": "1004a.jpg", "color": "浅花灰"},
+			{"id":91, "title":"牛仔裤 修身直筒 轻弹冰丝 男款 中蓝色", "old": 258, "now": 138, "future": 69, "img": "1005a.jpg", "color": "中蓝色"}
+		]
+	}
+}

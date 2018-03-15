@@ -18,12 +18,13 @@ div.hdbox{//header
 		background: #f7f7f7;
 		ul{
 			float: right;
-			width: 470px;
+			padding-right: 21px;
 			line-height: 32px;
 			font-size: 12px;
 			li{
 				float: left;
 				margin: 0 8px;
+				color: #808080;
 				a.wx,a.xl{
 					display: inline-block;
 					width: 18px;
@@ -89,7 +90,7 @@ div.hdbox{//header
 					background: #fff;
 					color: $red_color;
 				}
-				&:hover div.hid, &:hover div.spacer{
+				&:hover .hid, &:hover div.spacer{
 					display: block;
 				}
 				div.spacer{
@@ -99,21 +100,112 @@ div.hdbox{//header
 					background: #fff;
 					width: 100%;
 					height: 1px;
-					z-index: 1;
+					z-index: 1000;
 					display: none;
 				}
 				div.hid{
 					position: absolute;
 					top: 27px;
-					max-height: 500px;
-					width: 440px;
+					max-width: 345px;
 					border: 1px solid $red_color;
-					right: 0;
+					right: -1px;
 					color: #333;
 					text-align: left;
 					padding:0 5px;
 					display: none;
+					z-index: 999;
 					background: #fff;
+					p{
+						width:345px;
+						display: none;
+					}
+					.con{
+						width: 280px;
+						margin:4px 15px 10px;
+						padding-bottom: 4px;
+						h3{
+							line-height: 33px;
+						    border-bottom: 1px solid #ececec;
+						    color: #727171;
+						    font-size: 13px;
+						    margin-bottom: 5px;
+						}
+						.rows{
+							width: 280px;
+							height: 36px;
+							overflow: hidden;
+							margin: 10px 0;
+							a.de{
+								color: $red_color;
+								float: right;
+							}
+							dl{
+								width: 200px;
+								height:36px;
+								float: left;
+								dt{
+									float: left;
+									img{
+										width: 36px;
+										height: 36px;
+									}
+								}
+								dd{
+									font-family: "宋体";
+									width: 151px;
+									font-size: 12px;
+									line-height: 20px;
+									float: left;
+									white-space: nowrap;
+									overflow: hidden;
+									text-overflow: ellipsis;
+									vertical-align: middle;
+									a{
+										color: #727171;
+										&:hover{
+											color: $red_color;
+										};
+									}
+								}
+								dd.p{
+									color: $red_color;
+								}
+							}
+							
+						}
+						.foot{
+							width: 280px;
+							height: 30px;
+							margin-bottom: 5px;
+							font-family: "宋体";
+							border-top: 1px solid #ececec;
+							padding-top: 6px;
+							margin-top: 15px;
+							.left{
+								float: left;
+								width: 165px;
+								height: 30px;
+								line-height: 15px;
+								p{
+									color: #a3a3a3;
+								}
+								span{
+									color: $red_color;
+								}
+							}
+							.right{
+								float: right;
+								width: 110px;
+								height: 29px;
+								background: $red_color;
+								line-height: 29px;
+								text-align: center;
+								a{
+									color: #fff;
+								}
+							}
+						}
+					}
 				}
 				i.glyphicon{margin-right: 5px;vertical-align: -0.1em;}
 			}

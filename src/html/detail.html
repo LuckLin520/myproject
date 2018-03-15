@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/headerfooter.css">
+<link rel="stylesheet" type="text/css" href="/css/detail.css">
+<script src="/lib/requirejs/require.js" data-main="/js/detail"></script>
+</head>
+<body>
+	<header></header>
+	<main>
+		<div class="buyBox">
+			<p class="top"><a href="/index.html">首页</a> > <span>凡客针织外套 连帽薄款 菱形格 男款</span></p>
+			<div class="title">
+				<div class="fl"><h2>凡客针织外套 连帽薄款 菱形格 男款 藏蓝</h2><p>充值购买更优惠</p></div>
+				<ul class="fr">
+					<li><a href="">模特搭配</a><span>|</span></li>
+					<li><a href="">购买指南</a><span>|</span></li>
+					<li><a href="">版型工艺</a><span>|</span></li>
+					<li><a href="">设计细节</a><span>|</span></li>
+					<li><a href="">洗涤保养</a><span>|</span></li>
+					<li><a href="">评论</a><span>|</span></li>
+					<li><a href="">提问</a></li>
+				</ul>
+			</div>
+			<div class="con">
+				<div class="zoomBox">
+					<div class="mins"><div></div></div>	
+					<div class="bigs"><img src="/images/adBar/1001.jpg" data-zoom-image="/images/adBar/1001.jpg"></div>
+				</div>
+				<div class="buy">
+					<div class="price"><p>特惠价：<i>￥</i><span>158.00</span>充100返100，点击充值</p></div>
+					<div class="color">
+						<span>颜色：</span>
+						<dl>
+							<dt></dt>
+							<dd></dd>
+							<i class="glyphicon glyphicon-ok"></i>
+						</dl>
+					</div>
+					<div class="size">
+						<span>尺码：</span>
+						<ul>
+							<li>110</li>
+							<li>120</li>
+							<li>130</li>
+							<li>140</li>
+							<li>150</li>
+						</ul>
+						<div class="info">请选择您要购买的尺码</div>
+					</div>
+					<div class="count">
+						<span>数量：</span>
+						<select>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+						</select>
+					</div>	
+					<div class="already">
+						<span>已选：</span>
+						<em class="co">黑色</em><em class="ishas">现在有货</em>
+					</div>
+					<div class="join">
+						<div class="fl">立即购买</div>
+						<div class="fr"><i class="glyphicon glyphicon-shopping-cart"></i>加入购物车</div>
+					</div>
+					<ul class="foot">
+						<li>全场购物满199元免运费</li>
+						<li>买三免一</li>
+						<p>优惠提示</p>
+					</ul>
+					<div class="hid">
+						<div class="loading">
+							<img src="/images/detail/loading.gif">
+						</div>
+						<div class="top">
+							<p>商品成功放入购物车</p><i class="glyphicon glyphicon-remove"></i>
+						</div>
+						<div class="cart clearfix">
+							<div class="logo"></div>
+							<div class="total">
+								<p class="cou">共有 <span>0</span> 件商品</p>
+								<p class="pri">总计<span>￥<em>00.00</em></span></p>
+							</div>
+							<div class="bttn">
+								<a class="fl" href="/index.html">&lt;&lt;继续购物</a>
+								<a class="fr" href="/html/cart.html">去购物车&gt;&gt;</a>
+							</div>
+						</div>
+						<div class="bot">
+							<h4>推荐产品</h4>
+							<ul class="introductory">
+
+							</ul>
+							<script type="text/html" id="introductory">
+								{{each hidList as v i}}
+									<li>
+										<img src="/images/adBar/{{v.img}}">
+										<p>{{v.title}}</p>
+										<span>售价￥<em>{{v.now}}</em></span>
+									</li>
+								{{/each}}
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer></footer>
+</body>
+</html>

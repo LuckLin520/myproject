@@ -9,7 +9,7 @@
  * @param [type]: 可选，设置轮播图类型，"fade"淡入淡出/"slid"左右滑动，默认"slid" 
  *
  * Copyright 2018 LuckLin520
- * Date: 2018-03-5 Completed in Chengdu
+ * Date: 2018-03-05 Completed in Chengdu.
  */
 ;
 (function($){
@@ -19,8 +19,8 @@
 		this.height = height;
 		this.type = type || "slid";
 		this.len = img.length;
-		this.c = 0;
-		this.n = 1;
+		this.c = 1;
+		this.n = 2;
 		this.container = null;
 		this.imgbox = null;
 		this.dotbox = null;
@@ -34,7 +34,7 @@
 			let html = `<ul class="imgbox"></ul>
 						<ul class="dotbox"></ul>
 						<ul class="tabbox">
-							<li><</li><li>></li>
+							<li class="lt"></li><li class="gt"></li>
 						</ul>`;
 			this.container.html(html);
 			this.imgbox = this.container.children(".imgbox");
@@ -46,7 +46,7 @@
 				this.dotbox.append("<li></li>");
 			})
 			if(this.type === "fade"){
-				this.imgbox.children("li").css({position: "absolute"});
+				this.imgbox.children("li").css({position: "absolute"}).eq(0).show().siblings().hide();
 				this.imgbox.css({width: this.width,
 								 height: this.height,
 								 position: "absolute"});
@@ -60,7 +60,8 @@
 								 position: "absolute",
 								 left: -this.width});
 			}
-			this.container.css({position: "relative", 
+			this.container.css({userSelect: "none",
+								position: "relative", 
 								width: this.width, 
 								height: this.height, 
 								overflow: "hidden",
@@ -78,22 +79,34 @@
 							 	borderRadius: "50%",
 							 	background: "#ccc",
 							 	cursor: "pointer"
-							}).eq(0).css({background: "red"});
+							}).eq(0).css({background: "#a10000"});
 			this.tabbox.css({width: "100%", 
-							height: "50px", 
+							height: "15%", 
 							position: "absolute",
-							top: "calc(50% - 25px)",
+							top: "calc(50% - 20px)",
 							display: "none"
 						}).children("li").css({
-							width: "18px",
-							height: "50px",
-							background: "#ccc",
 							position: "absolute",
 							lineHeight: "50px",
 							textAlign: "center",
-							cursor: "pointer"
+							cursor: "pointer",
+							opacity: 0.8
 						}).eq(1).css({
-							right: "0"
+							right: "-21px",
+							border: "25px solid transparent",
+							borderLeft: "15px solid #ccc"
+						}).hover(function(){
+							$(this).css({borderLeftColor: "#a10000"});
+						}, function(){
+							$(this).css({borderLeftColor: "#ccc"});
+						}).prev(".lt").css({
+							left: "-21px",
+							border: "25px solid transparent",
+							borderRight: "15px solid #ccc"
+						}).hover(function(){
+							$(this).css({borderRightColor: "#a10000"});
+						}, function(){
+							$(this).css({borderRightColor: "#ccc"});
 						});
 			this.container.children("ul").css({margin: 0, padding: 0, listStyle: "none"});
 			this.eventListener();
@@ -103,10 +116,10 @@
 				dots = this.dotbox.children("li");
 			if(this.type === "fade"){
 				this.n = this.n === this.len ? 0 : this.n === -1 ? this.len - 1 : this.n;
-				lis.eq(this.n).fadeIn(500).siblings("li").fadeOut(500);
-				dots.eq(this.n).css({background: "red"}).siblings("li").css({background: "#ccc"});
+				lis.eq(this.n).finish().fadeIn(500).siblings("li").finish().fadeOut(500);
+				dots.eq(this.n).css({background: "#a10000"}).siblings("li").css({background: "#ccc"});
 			}else if(this.type === "slid"){
-				this.imgbox.finish().animate({left: -this.width * this.n}, 300, ()=>{
+				this.imgbox.finish().animate({left: -this.width * this.n}, 400, ()=>{
 									if(this.n === 1){
 										this.n = this.len - 1;
 										this.c = this.len - 2;
@@ -120,7 +133,7 @@
 				});
 				let dotIdx = this.n - 1;
 				dotIdx = dotIdx === -1 ? this.len - 3 : dotIdx === this.len - 2 ? 0 : dotIdx;
-				dots.eq(dotIdx).css({background: "red"}).siblings("li").css({background: "#ccc"});
+				dots.eq(dotIdx).css({background: "#a10000"}).siblings("li").css({background: "#ccc"});
 			};
 			this.c = this.n++;
 		},
@@ -152,13 +165,13 @@
 				clearTimeout(timeout);
 				if(tf){
 					tf = false;
-					if($(this).is(":contains(<)"))
+					if($(this).is(".lt"))
 						that.n = --that.c;
 					that.move();
 				}
 				timeout = setTimeout(function(){
 					tf = true;
-				}, 300)
+				}, 400)
 			});
 		}
 	}
@@ -169,6 +182,7 @@
 				obj.init($(v));
 				obj.autoPlay();
 			})
+			return this;
 		}
 	})
 })(jQuery)

@@ -3,11 +3,11 @@
 	"res_error":"",
 	"res_body":{
 		"data":[
-			{"id":1, "title":"童装卫衣 圆领 熊本熊 S6 浅花灰", "old": 598, "now": 338, "future": 169, "img":"1001.jpg"},
-			{"id":2, "title":"牛津纺 夹克修身 C9 男款 绿色", "old": 398, "now": 178, "future": 89, "img":"1002.jpg"},
-			{"id":3, "title":"牛津纺 拼接 男款 黑色", "old": 298, "now": 138, "future": 69, "img":"1003.jpg"},
-			{"id":4, "title":"童装卫衣 圆领 熊本熊 S9 黑色", "old": 258, "now": 138, "future": 69, "img":"1004.jpg"},
-			{"id":5, "title":"凡客牛仔裤 基础直筒 轻弹水洗 男款 原靛蓝", "old": 258, "now": 138, "future": 69, "img":"1004.jpg"}
+			{"id":82, "title":"针织夹克 轻弹复古 男款 黄色", "old": 398, "now": 218, "future": 109, "img": "1001.jpg", "color": "黄色"},
+			{"id":83, "title":"凡客棉夹克 意式立领 收纳帽 男款 黑色", "old": 798, "now": 438, "future": 219, "img": "1002.jpg", "color": "黑色"},
+			{"id":84, "title":"牛津纺 刺绣工装 C9 男款 白色", "old": 298, "now": 138, "future": 69, "img": "1003.jpg", "color": "白色"},
+			{"id":85, "title":"凡客卫衣 暖绒开衫 男款 浅花灰", "old": 298, "now": 198, "future": 99, "img": "1004.jpg", "color": "浅花灰"},
+			{"id":86, "title":"牛仔 轻弹小脚裤 女款 蓝水牛", "old": 358, "now": 138, "future": 69, "img": "1005.jpg", "color": "蓝水牛"}
 		]
 	}
 }

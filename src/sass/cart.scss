@@ -1,0 +1,357 @@
+a{text-decoration: none;}
+ul li{list-style: none;}
+body,p,h1,h2,h3,h4,ul,dl,dd,input{margin: 0;padding: 0;}
+$rc: #a10000;
+header{
+	width: 980px;
+	height: 50px;
+	border-bottom: 1px solid #7a7f89;
+	margin: 0 auto;
+	.logo{
+		margin-top: 10px;
+		width: 311px;
+		height: 39px;
+		text-align: center;
+		float: left;
+		img{
+			height: 32px;
+		}
+	}
+	.user{
+		float: right;
+		margin-top: 20px;
+		li{
+			float: left;
+			font-size: 12px;
+			color: #666;
+			a{
+				color: $rc;
+			}
+			span{
+				margin: 0 5px;
+			}
+		}
+		li.name{
+			margin-right: 10px;
+		}
+		li.help{
+			margin-left: 25px;
+			a{color:#333;}
+		}
+	}
+}
+
+main{
+	width: 980px;
+	background: #fff;
+	margin: 11px auto;
+	.top{
+		.liucheng{
+			width: 550px;
+			height: 28px;
+			div{
+				width: 177px;
+				height: 28px;
+				float: left;
+				font-size: 12px;
+				font-weight: bold;
+				text-align: center;
+				line-height: 28px;
+				color: #666;
+				background: url(/images/detail/newProm.gif);
+			}
+			:nth-child(1){
+				color: #fff;
+			}
+			:nth-child(2){
+				width: 177px;
+				background-position: -177px 0;
+			}
+			:nth-child(3){
+				width:191px;
+				background-position: -360px 0;
+			};
+		}
+		dl.tit{
+			overflow: hidden;
+			margin-top: 12px;
+			dt{
+				width: 40px;
+				height: 30px;
+				float: left;
+				background: url(/images/detail/btn.gif) -460px 0;
+			}
+			dd{
+				margin: 5px 0 0 5px;
+				float:left;
+				h2{
+					font-size: 18px;
+					color: #333;
+				}
+			}
+		}
+		p.ps{
+			margin-top: 5px;
+			font-size: 12px;
+			color: #656565;
+			span{
+				color:$rc;
+			}
+		}
+	}
+	table{
+		width: 980px;
+		margin-top: 15px;
+		border: 1px solid #dcdfe4;
+		thead{
+			background: url(/images/detail/carthd.png);
+			tr{
+				width: 980px;
+				height: 37px;
+				text-align: center;
+				font-size: 12px;
+				font-weight: bold;
+				
+				td{
+					border-spacing: 1px;
+					label input{
+						vertical-align: -0.15em;
+					}
+				}
+				
+			}
+		}
+		tbody{
+			text-align: center;
+			tr{
+				vertical-align: middle;
+				height: 70px;
+				background: #fff;
+				font-size: 12px;
+				color: #333;
+				.empty{
+					width: 12px;
+					background: #fff;
+				}
+				.t{
+					text-align: left;
+					img{
+						vertical-align: middle;
+						width: 50px;
+						height: 50px;
+						border: 1px solid #c8c8c8;
+						margin-right: 8px;
+					}
+					
+				}
+				.count{	
+					input{
+						text-align: center;
+						width: 30px;
+						height: 16px;
+						margin: 0 5px; 
+						vertical-align: 0.4em;
+					}
+					i{
+						display: inline-block;
+						width: 17px;
+						height: 20px;
+						background: url(/images/detail/sub_add.png);
+					}
+					i.sub{
+						background-position: -85px 0;
+					}
+				}
+				.de{
+					position: relative;
+					a{
+						color: #999;
+						&:hover{
+							color:$rc;
+						}
+					}
+					div.hid{
+						position: absolute;
+						top: -45px;
+						left: -70px;
+						border:1px solid $rc;
+						width: 150px;
+						height: 52px;
+						padding-top: 10px;
+						background-color: #fff;
+						display: none;
+						a{	
+							line-height: 40px;
+							color: #333;
+							margin-right: 10px;
+							&:hover{
+								color:$rc;
+							}
+						}
+						i{
+							position: absolute;
+							width: 9px;
+							height: 9px;
+							background: url(/images/detail/sub_add.png) 0 -75px;
+							bottom: -8px;
+							transform: rotateZ(180deg);
+							left: 98px;
+						}
+					}
+				}
+			}
+		}
+	}
+	div.calc{
+		width: 980px;
+		height: 100px;
+		background: #fffef5;
+		border: 1px solid #ebe5bb;
+		margin-top: 12px;
+		position: relative;
+		font-size: 12px;
+		color: #333;
+		.bar{
+			overflow: hidden;
+			p{
+				float: left;
+				margin-right: 45px;
+				margin-top: 18px;
+				margin-left: 30px;
+			}
+			p.de{
+				cursor: pointer;
+				&:hover{
+					color:$rc;
+				}
+			}
+			p.total{
+				span{
+					color: $rc;
+					font-family: Arial;
+					font-weight: bold;
+				}
+			}
+			p.red{
+				color: $rc;
+				font-weight: bold;
+			}
+		}
+		.price{
+			margin-top: 20px;
+			margin-left: 30px;
+			span{
+				color: $rc;
+				font-size: 24px;
+				font-weight: bold;
+				i{
+					font-style: normal;
+				}
+			}
+		}
+		.btn{
+			position: absolute;
+			width: 295px;
+			height: 50px;
+			right: 12px;
+			bottom: 15px;
+			a{
+				float: left;
+				background: url(/images/detail/btn.gif);
+				text-align: center;
+			}
+			.fl{
+				width: 122px;
+				height: 37px;
+				background-position: -160px 0;
+				line-height: 37px;
+				color: #666;
+				font-size: 14px;
+				margin-top: 8px;
+			}
+			.fr{
+				width: 160px;
+				height: 50px;
+				background-position: 0 0;
+				line-height: 50px;
+				color: #fff;
+				font-size: 20px;
+				float: right;
+				span{
+					margin-left:25px;
+				}
+			}
+		}
+	}
+	p.no_product{
+		margin: 80px 0;
+		text-align: center;
+		color: #808080;
+		font-weight: bold;
+		a{
+			color: $rc;
+			font-family: "宋体";
+		}
+	}
+
+}
+
+footer{
+	div.copyright{
+		width: 100%;
+		height: 160px;
+		margin-top: 30px;
+		p{
+			width: 840px;
+			height: 55px;
+			font-size: 12px;
+			color: #3e3a39;
+			text-align: center;
+			margin: 15px auto;
+			line-height: 23px;
+		}
+		div.logos{
+			width: 760px;
+			margin: 0 auto;
+			height: 45px;
+			div{
+				display: inline-block;
+				margin: 0 11px;
+				background-image: url('/images/idxFooter/Image 27.png'); 
+			}
+			:nth-child(1){
+				width: 110px;
+				height: 41px;
+				background-position: -1px -1px;
+			}
+			:nth-child(2){
+				width: 154px;
+				height: 45px;
+				background-position: -1px -48px;
+				vertical-align: -0.1em;
+			}
+			:nth-child(3){
+				width:94px;
+				height: 41px;
+				background-position: -1px -94px;
+			}
+			:nth-child(4){
+				width:99px;
+				height: 41px;
+				background-position: -97px -94px;
+			}
+			:nth-child(5){
+				width:41px;
+				height: 41px;
+				background-position: -200px -94px;
+			}
+			:nth-child(6){
+				width:127px;
+				height: 43px;
+				background: url(/images/idxFooter/cctv.png) no-repeat;
+				background-size: 127px 43px;
+			}
+
+		}
+	}
+}

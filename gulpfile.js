@@ -57,7 +57,7 @@ gulp.task("mock", function(){
 	gulp.src("src/mock/**/*.*")
 		.pipe(gulp.dest("dist/mock"));
 });
-gulp.task("copyfile", ["images", "mock"]);
+gulp.task("copyfile", ["images", "mock", "lib"]);
 
 gulp.task("watch", function(){
 	gulp.watch("src/sass/**/*.scss", ["sass"]);

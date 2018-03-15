@@ -2,10 +2,10 @@
 <div class="hdbox">
 	<div class="bar">
 		<ul>
-			<li>您好,欢迎光临凡客诚品！</li>
-			<li><a href="">登录</a></li>
+			<li class="hello">您好,&emsp;<span>欢迎光临凡客诚品！</span></li>
+			<li class="login"><a href="/html/login.html">登录</a></li>
 			<li>|</li>
-			<li><a href="">注册</a></li>
+			<li class="register"><a href="/html/register.html">注册</a></li>
 			<li><a class="hover" href="">我的订单</a></li>
 			<li><a class="hover" href=""><i class="glyphicon glyphicon-volume-up"></i>网站公告</a></li>
 			<li><a class="wx" href=""><span class="erweima"></span></a><a class="xl" href=""></a></li>
@@ -14,9 +14,33 @@
 	<div class="search_area">
 		<div class="fr">
 			<div class="car">
-				<i class="glyphicon glyphicon-shopping-cart"></i><span>购物车(<em>0</em>)</span>
+				<a href="/html/cart.html"><i class="glyphicon glyphicon-shopping-cart"></i><span>购物车(<em class="count">0</em>)</span></a>
 				<div class="spacer"></div>
-				<div class="hid">你的购物车中没有任何商品</div>
+				<div class="hid"><p>你的购物车中没有任何商品</p></div>
+
+				<script type="text/html" id="hid">
+					<div class="con">
+						<h3>最近加入的商品：</h3>
+						{{each list as v i}}
+							<div class="rows">
+								<dl>
+									<dt><img src="{{v.img}}"></dt>
+									<dd class="t"><a href="/html/detail.html">{{v.title}}</a></dd>
+									<dd class="p">￥<span>{{(v.price * 1).toFixed(2)}}</span>×<span>{{v.count}}</span></dd>
+								</dl>
+								<a class="de" href="javascript:void(0)">删除</a>
+							</div>
+						{{/each}}
+						<div class="foot">
+							<div class="left">
+								<p>共计(未计算促销折扣)</p>
+								<span>￥<em>00.00</em></span>
+							</div>
+							<div class="right"><a href="/html/cart.html">查看购物车(<em>0</em>件)</a></div>
+						</div>
+					</div>
+				</script>
+
 			</div>
 			<div class="search">
 				<input class="txt" type="text" placeholder="搜“熊本熊”，体验与众不同">
@@ -25,7 +49,7 @@
 			<p class="hot_search">热门搜索：<span>熊本熊卫&emsp;衣免烫衬衫&emsp;C9&emsp;牛津纺&emsp;外套&emsp;针织衫&emsp;袜品</span></p>
 		</div>
 		<div class="bottom">
-			<a href=""><h1>凡客诚品</h1></a>
+			<a href="/index.html"><h1>凡客诚品</h1></a>
 			<ul class="daohang">
 				<li><a href="">首页</a></li>
 				<li><a href="">衬衫</a><i></i><div class="spacer"></div><div class="sub"></div></li>

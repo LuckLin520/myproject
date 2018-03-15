@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车页面</title>
+<link rel="stylesheet" type="text/css" href="/css/cart.css">
+<script src="/lib/requirejs/require.js" data-main="/js/cart"></script>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<a href="/index.html"><img src="/images/idxHeader/logo18546.png"></a>
+		</div>
+		<ul class="user">
+			<li class="name">您好，<span>欢迎光临凡客诚品!</span></li>
+			<li><a href="/html/login.html">登录</a><span>|</span></li>
+			<li><a href="/html/register.html">注册</a></li>
+			<li class="help"><a href="">帮助中心</a></li>
+		</ul>
+	</header>
+	<main>
+		<div class="top">
+			<div class="liucheng">
+				<div>1.我的购物车</div>
+				<div>2.填写核对信息单</div>
+				<div>3.成功提交订单</div>
+			</div>
+			<dl class="tit">
+				<dt></dt>
+				<dd><h2>我的购物车</h2></dd>
+			</dl>
+			<p class="ps"><span>温馨提示：</span>1.选购清单中的商品无法保留库存，请您及时结算。2.商品的价格和库存将以订单提交时为准。3.促销活动满减优惠将均摊至商品小计中。</p>
+		</div>
+		<table cellspacing="0">
+			<thead>
+				<tr>
+					<td class="empty"></td>
+					<td width="100"><label><input type="checkbox">&nbsp;全选</label></td>
+					<td width="300">商品名称</td>
+					<td>尺寸</td>
+					<td>单价</td>
+					<td>数量</td>
+					<td>小计</td>
+					<td>操作</td>
+					<td class="empty"></td>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+			<script type="text/html" id="cart_list">
+				{{each pro as v i}}
+					<tr>
+						<td class="empty"></td>
+						<td class="check"><input type="checkbox"></td>
+						<td class="t"><img src={{v.img}}><span>{{v.title}}</span></td>
+						<td>{{v.size}}</td>
+						<td class="price">￥<span>{{(v.price * 1).toFixed(2)}}</span></td>
+						<td class="count"><i class="sub"></i><input type="text" value={{v.count}}><i class="add"></i></td>
+						<td class="prices">￥<span>{{(v.count * v.price).toFixed(2)}}</span></td>
+						<td class="de"><a href="javascript:void(0);">删除</a>
+							<div class="hid">
+								<p>确定要删除此商品吗？</p>
+								<p><a class="yes" href="javascript:void(0)">确定</a><a class="no" href="javascript:void(0)">取消</a></p>
+								<i></i>
+							</div>
+						</td>
+						<td class="empty"></td>
+					</tr>
+				{{/each}}
+			</script>
+		</table>
+		<!-- 结算container -->
+		<div class="calc">
+			<div class="bar">
+				<p class="de">删除选中商品</p>
+				<p class="total">数量总计：<span>103</span>件</p>
+				<p class="red">您目前可享受全场购物免运费</p>
+			</div>
+			<div class="price">
+				<p>产品金额总计(不含运费)：<span>￥<i>00.00</i></span></p>
+			</div>
+			<div class="btn">
+				<a class="fl" href="/index.html">&lt;&lt;继续购物</a>
+				<a class="fr" href=""><span>去结算&gt;&gt;</span></a>
+			</div>
+		</div>
+		<p style="display: none" class="no_product">您的购物车中没有商品，请您先 <a href="/index.html">选购商品&gt;&gt;</a></p>
+	</main>
+	<footer>
+		<div class="copyright">
+			<p>Copyright 2007 - 2016 vancl.com All Rights Reserved 京ICP证100557号 京公网安备11011502002400号 出版物经营许可证新出发京批字第直110138号凡客诚品（北京）科技有限公司</p>
+			<div class="logos">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
